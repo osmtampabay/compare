@@ -1,7 +1,7 @@
 /* ### Icons ### */
 @font-face {
   font-family:'Iconic';
-  src:url('iconic.ttf');
+  src:url('../assets/iconic.ttf');
   }
 .i:before {
   margin-right:5px;
@@ -13,6 +13,13 @@
 
 a {
   color: black;
+}
+
+.topbar {
+  width: 100%;
+  height: 50px;
+  border-bottom: 3px solid #555;
+  z-index: 99999;
 }
 
 .button {
@@ -43,15 +50,16 @@ body,
 #osm {
   float: left;
   width: 50%;
+  border-right: 3px solid #555;
   }
 #google {
   float: left;
-  width: 50%;
+  width: 49.6%;
   }
 #search {
   text-align: right;
   left: 50%;
-  top: 5px;
+  top: 105px;
   position: absolute;
   z-index: 10;
   margin-left: -35px;

@@ -4,7 +4,7 @@ var osmLayer = new L.TileLayer(
       'http://a.tile.openstreetmap.org/{z}/{x}/{y}.png',
       {maxZoom: 18, attribution: 'Map data &copy; 2011 OpenStreetMap contributors.'}),
     omap = new L.Map('osm').addLayer(osmLayer),
-    lat = 30, lng = -96, z = 4;
+    lat = 27.8, lng = -82.6, z = 10;
 
 if (location.hash.match(/,/g)) {
     var pts = location.hash.slice(1).split(',');
@@ -22,7 +22,7 @@ var gmap = new google.maps.Map(document.getElementById('google'), {
 var omapLock = 0, gmapLock = 0;
 var omapMove = function(e) {
   if (omapLock > Date.now()) return;
-  gmapLock = Date.now() + 500;
+  gmapLock = Date.now() + 40;
   var c = omap.getCenter();
   var z = omap.getZoom();
   gmap.panTo(new google.maps.LatLng(c.lat, c.lng));
@@ -31,7 +31,7 @@ var omapMove = function(e) {
 
 var gmapMove = function() {
   if (gmapLock > Date.now()) return;
-  omapLock = Date.now() + 500;
+  omapLock = Date.now() + 40;
   var c = gmap.getCenter();
   omap.setView(new L.LatLng(c.lat(), c.lng()), gmap.getZoom());
 };
