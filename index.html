@@ -3,23 +3,24 @@
 <head>
 <meta charset=utf-8 />
 <title>Compare</title>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="js/leaflet-dist/leaflet.css" />
 <link rel="stylesheet" href='css/reset.css' />
 <link rel="stylesheet" href='css/style.css' />
-
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD-TB_1Ytvh0CjizmBk1x0low0izcy0Cyo&sensor=false"></script>
 </head>
 <body>
-  <div class='topbar'></div>
   <div id='search'>
-    <input name='location' type='text' placeholder='enter location'>
+    <input name='location' type='text' placeholder='Enter location'>
     <a href='#' class='button i isearch'>Go</a>
   </div>
+  <div class='edit josm' onclick="openIn('j')">edit in josm</div>
+  <div class='edit potlatch' onclick="openIn('p')">edit in potlatch</div>
   <div class='map' id='osm'>
   </div>
   <div class='map' id='google'>
   </div>
-  <script src='js/leaflet-dist/leaflet.js'></script>
+<script src='js/leaflet-dist/leaflet.js'></script>
 <script src='js/leaflet-hash.js'></script>
 <script src='js/jquery.min.js'></script>
 <script src='js/site.js'></script>

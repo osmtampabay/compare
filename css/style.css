@@ -1,18 +1,22 @@
+body {
+  font: 16px "PT Sans", sans-serif;;
+}
+
 /* ### Icons ### */
 @font-face {
   font-family:'Iconic';
   src:url('../assets/iconic.ttf');
-  }
+}
 .i:before {
   margin-right:5px;
   font-size:18px;
   vertical-align:-5%;
   font-family:'Iconic';
-  }
+}
 .isearch:before { content:'f'; }
 
 a {
-  color: black;
+  color: white;
 }
 
 .topbar {
@@ -31,48 +35,46 @@ a {
   padding: 0 5px;
   height: 20px;
   cursor: pointer;
-  background: rgba(255, 255, 255, .75);
-  border-radius: 5px;
+  background: #cc9604;
   display: inline-block;
   text-shadow: 0px -1px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
-  }
+}
   .button:hover {
-    background: rgba(255, 255, 255, 1);
-    }
+    background: ;
+  }
 
 html,
 body,
 .map {
   height: 100%;
-  font: 15px Helvetica,Arial,sans-serif;
 }
 #osm {
   float: left;
   width: 50%;
-  border-right: 3px solid #555;
-  }
+  border-right: 2px solid #4da3a3;
+}
 #google {
   float: left;
   width: 49.6%;
-  }
+  border-left: 2px solid #4da3a3;
+}
 #search {
   text-align: right;
   left: 50%;
-  top: 105px;
+  top:5px;
   position: absolute;
   z-index: 10;
   margin-left: -35px;
   width: 30px;
   height: 30px;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
-  }
+  background: #fff4db;
+}
   #search:hover {
     margin-left: -305px;
     width: 300px;
-    }
+  }
 #search input[name=location] {
   border: 1px solid #dddddd;
   background: rgba(255, 255, 255, .75);
@@ -82,12 +84,38 @@ body,
   top: 5px;
   right: 30px;
   width: 260px;
-  }
+}
   #search input[name=location]:focus {
     background: rgba(255, 255, 255, 1);
-    }
+  }
   #search .button {
     overflow:hidden;
     width: 20px;
     height: 20px;
-    }
+  }
+.edit {
+  font-size: 1.1em;
+  background: #fff4db;
+  text-align: right;
+  color: #cc9604;
+  padding: 5px;
+  cursor: pointer;
+}
+.edit:hover {
+  color: #727272;
+  background-color: #eee;
+}
+.josm {
+  position: absolute;
+  top: 45px;
+  z-index:11;
+  left: 50%;
+  margin-left: -108px;
+}
+.potlatch {
+  position: absolute;
+  top: 88px;
+  z-index:11;
+  left: 50%;
+  margin-left: -134px;
+}

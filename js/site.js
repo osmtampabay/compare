@@ -1,3 +1,5 @@
+var map;
+
 L.Control.Attribution.prototype.options.prefix = '';
 
 var osmLayer = new L.TileLayer(
@@ -68,3 +70,31 @@ $('#search .button').click(geolookup);
 $('#search input[type=text]').keypress(function(e) {
   if (e.which == 13) geolookup();
 });
+
+// edit stuff courtesy of Martijn's remapatron: https://github.com/mvexel/remapatron/
+function openIn(editor) {
+  if (omap.getZoom() < 14) {
+    alert("Please zoom in a little so we don\'t have to load a huge area from the API.");
+    return false;
+  }
+  var bounds = omap.getBounds();
+  var sw = bounds.getSouthWest();
+  var ne = bounds.getNorthEast();
+  if (editor == 'j') {
+    var JOSMurl = "http://127.0.0.1:8111/load_and_zoom?left=" + sw.lng + "&right=" + ne.lng + "&top=" + ne.lat + "&bottom=" + sw.lat + "&new_layer=0";
+    $.ajax({
+      url: JOSMurl,
+      complete: function(t) {
+        if (t.status != 200) {
+          alert("JOSM didn't respond, is it running?");
+        } else {
+          alert("Loaded area in JOSM...");
+        }
+      }
+    });
+  } else if (editor == 'p') {
+    var PotlatchURL = "http://www.openstreetmap.org/edit?editor=potlatch2&bbox=" + omap.getBounds().toBBoxString();
+    window.open(PotlatchURL);
+    alert("Area opened in Potlatch...");
+  }
+}
